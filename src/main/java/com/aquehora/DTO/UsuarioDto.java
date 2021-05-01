@@ -10,5 +10,5 @@ public class UsuarioDto
     private Long id;
     private String name;
     private String correo;
-
+    private String contrasena;
 }

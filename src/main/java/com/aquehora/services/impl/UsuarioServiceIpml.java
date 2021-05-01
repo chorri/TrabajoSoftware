@@ -38,9 +38,9 @@ public class UsuarioServiceIpml implements UsuarioService
     public UsuarioDto createUsuario(CreateUsuarioDto createUsuarioDto) throws AqueHoraExceptions {
         Usuario usuario=new Usuario();
         usuario.setNombre(createUsuarioDto.getName());
-        usuario.setContrasena(createUsuarioDto.getPassword());
-        usuario.setFecha_nacimiento(createUsuarioDto.getFecha_nacimiento());
-
+        usuario.setCorreo(createUsuarioDto.getCorreo());
+        usuario.setContrasena(createUsuarioDto.getContrasena());
+        //usuario.setFecha_nacimiento(createUsuarioDto.getFecha_nacimiento());
         try{
             usuario=usuarioRepository.save(usuario);
         }catch (Exception ex){
@@ -54,5 +54,4 @@ public class UsuarioServiceIpml implements UsuarioService
     {
         return usuarioRepository.findById(usuarioId).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
     }
-
 }

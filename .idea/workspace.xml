@@ -23,16 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56da78ec-81af-4469-8f79-1d9b7e85b9d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CreateUsuarioDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/ErrorDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/UsuarioDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/exceptions/AqueHoraExceptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/exceptions/InternalServerErrorException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/exceptions/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/repositories/UsuarioRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/UsuarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/UsuarioServiceIpml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/controllers/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/responses/AqueHoraResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CreateUsuarioDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CreateUsuarioDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/UsuarioDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/UsuarioDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/entities/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/exceptions/AqueHoraExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/exceptions/AqueHoraExceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/UsuarioServiceIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/UsuarioServiceIpml.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +67,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Booking-Restaurant/backend" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">

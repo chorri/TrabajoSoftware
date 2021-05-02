@@ -6,4 +6,5 @@ import com.aquehora.exceptions.AqueHoraExceptions;
 
 public interface CalendarioService {
     CalendarioDto createCalendario(CreateCalendarioDto createCalendarioDto) throws AqueHoraExceptions;
+    CalendarioDto updateCalendario(CalendarioDto calendarioDto) throws AqueHoraExceptions;
 }

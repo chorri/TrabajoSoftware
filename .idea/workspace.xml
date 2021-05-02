@@ -23,17 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56da78ec-81af-4469-8f79-1d9b7e85b9d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CreatePomodoroDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/PomodoroDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/controllers/PomodoroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/entities/Pomodoro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/repositories/PomodoroRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/PomodoroService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/PomodoroServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CalendarioDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CreateCalendarioDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/entities/Calendario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/repositories/CalendarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/CalendarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/CalendarioServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/NotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/NotaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,13 +76,15 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

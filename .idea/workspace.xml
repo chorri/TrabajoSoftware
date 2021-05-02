@@ -23,9 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56da78ec-81af-4469-8f79-1d9b7e85b9d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/CreatePomodoroDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/DTO/PomodoroDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/controllers/PomodoroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/entities/Pomodoro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/repositories/PomodoroRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/PomodoroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/PomodoroServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/NotaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/services/impl/NotaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +43,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="backend" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1rok52UnL9YisgIswygrrieJaUs" />
@@ -67,6 +80,17 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AquehoraSoftwareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="TrabajoSoftware" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.aquehora.AquehoraSoftwareApplication" />

@@ -25,7 +25,7 @@ public class UsuarioServiceIpml implements UsuarioService
 
     @Override
     public UsuarioDto getUsuarioById(Long usuarioId) throws AqueHoraExceptions {
-        return modelMapper.map(getUsuarioById(usuarioId),UsuarioDto.class);
+        return modelMapper.map(getUsuarioEntity(usuarioId),UsuarioDto.class);
     }
 
     @Override
@@ -49,9 +49,9 @@ public class UsuarioServiceIpml implements UsuarioService
         return  modelMapper.map(getUsuarioEntity(usuario.getId()),UsuarioDto.class);
     }
 
-
     @Override
     public int setupdateUser(String contrasena, Long usuarioId) throws AqueHoraExceptions {
+
         return usuarioRepository.setUpdateUser(contrasena,usuarioId);
     }
 
@@ -60,8 +60,20 @@ public class UsuarioServiceIpml implements UsuarioService
         return usuarioRepository.setUpdateUserCorreo(correo,usuarioId);
     }
 
+    @Override
+    public UsuarioDto LoginAcess(String usuario, String contrasena) throws AqueHoraExceptions
+    {
+        usuarioRepository.findByNombreEqualsAndContrasenaEquals(usuario,contrasena);
+        return modelMapper.map(getUsuarioEntityName(usuario),UsuarioDto.class);
+    }
+
     public Usuario getUsuarioEntity(Long usuarioId) throws AqueHoraExceptions
     {
         return usuarioRepository.findById(usuarioId).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
+    }
+
+    public Usuario getUsuarioEntityName(String name) throws AqueHoraExceptions
+    {
+        return usuarioRepository.findByNombre(name).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
     }
 }

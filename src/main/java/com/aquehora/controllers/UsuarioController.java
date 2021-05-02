@@ -2,6 +2,7 @@ package com.aquehora.controllers;
 
 import com.aquehora.DTO.CreateUsuarioDto;
 import com.aquehora.DTO.UsuarioDto;
+import com.aquehora.entities.Usuario;
 import com.aquehora.exceptions.AqueHoraExceptions;
 import com.aquehora.responses.AqueHoraResponse;
 import com.aquehora.services.UsuarioService;
@@ -61,6 +62,13 @@ public class UsuarioController
             aqueHoraExceptions.printStackTrace();
         }
         return 0;
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/LoginUser")
+    public AqueHoraResponse<UsuarioDto> LoginAcces(String nombre,String contrasena)
+            throws AqueHoraExceptions{
+        return new AqueHoraResponse<>("Succes Login",String.valueOf(HttpStatus.OK),"OK",usuarioService.LoginAcess(nombre,contrasena));
     }
 
 }

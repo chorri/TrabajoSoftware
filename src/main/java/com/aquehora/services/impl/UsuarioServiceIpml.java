@@ -54,6 +54,12 @@ public class UsuarioServiceIpml implements UsuarioService
     public int setupdateUser(String contrasena, Long usuarioId) throws AqueHoraExceptions {
         return usuarioRepository.setUpdateUser(contrasena,usuarioId);
     }
+
+    @Override
+    public int setUpdateUserCorreo(String correo, Long usuarioId) throws AqueHoraExceptions {
+        return usuarioRepository.setUpdateUserCorreo(correo,usuarioId);
+    }
+
     public Usuario getUsuarioEntity(Long usuarioId) throws AqueHoraExceptions
     {
         return usuarioRepository.findById(usuarioId).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));

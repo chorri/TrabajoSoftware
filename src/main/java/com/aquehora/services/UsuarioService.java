@@ -12,4 +12,5 @@ public interface UsuarioService
     List<UsuarioDto> getUsuarios() throws  AqueHoraExceptions;
     UsuarioDto createUsuario(CreateUsuarioDto createUsuarioDto) throws  AqueHoraExceptions;
     int setupdateUser(String contrasena,Long usuarioId) throws  AqueHoraExceptions;
+    int setUpdateUserCorreo(String correo, Long usuarioId) throws AqueHoraExceptions;
 }

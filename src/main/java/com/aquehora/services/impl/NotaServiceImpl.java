@@ -51,6 +51,45 @@ public class NotaServiceImpl implements NotaService {
         return modelMapper.map(getNotaEntity(nota.getId()),NotaDto.class);
     }
 
+    @Override
+    public NotaDto updateNota(NotaDto notaDto) throws AqueHoraExceptions {
+        return null;
+    }
+
+    /*
+    @Transactional
+    public Product save(Product product) {
+        try {
+            ProductValidator.save(product);
+
+            if(product.getId() == null) {
+                Product newProduct = productRepository.save(product);
+                return newProduct;
+            }
+
+            Product exitProduct = productRepository.findById(product.getId())
+                    .orElseThrow(() -> new NoDataFoundException("No existe el producto"));
+
+            exitProduct.setName(product.getName());
+            exitProduct.setPrice(product.getPrice());
+            exitProduct.setCategory(product.getCategory());
+            exitProduct.setDescription(product.getDescription());
+            exitProduct.setStock(product.getStock());
+
+            productRepository.save(exitProduct);
+
+            return exitProduct;
+        } catch (ValidateServiceException | NoDataFoundException e) {
+            log.info(e.getMessage(), e);
+            throw e;
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            throw new GeneralServiceException(e.getMessage(), e);
+        }
+
+    }
+     */
+
     private Nota getNotaEntity(Long notaId) throws AqueHoraExceptions {
         return notaRepository.findById(notaId).orElseThrow(() -> new NotFoundException("NotFound-4040", "Nota-NotFound-404"));
     }

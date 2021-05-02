@@ -50,7 +50,7 @@ public class UsuarioServiceIpml implements UsuarioService
         return  modelMapper.map(getUsuarioEntity(usuario.getId()),UsuarioDto.class);
     }
 
-    private Usuario getUsuarioEntity(Long usuarioId) throws AqueHoraExceptions
+    public Usuario getUsuarioEntity(Long usuarioId) throws AqueHoraExceptions
     {
         return usuarioRepository.findById(usuarioId).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
     }

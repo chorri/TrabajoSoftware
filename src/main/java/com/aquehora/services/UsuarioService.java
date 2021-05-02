@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface UsuarioService
 {
-    UsuarioDto getUsuarioById(Long usuarioId) throws AqueHoraExceptions; // SI hay error recurre al whattimeExceptions
+    UsuarioDto getUsuarioById(Long usuarioId) throws AqueHoraExceptions; // SI hay error recurre al AqueHoraExceptions
     List<UsuarioDto> getUsuarios() throws  AqueHoraExceptions;
     UsuarioDto createUsuario(CreateUsuarioDto createUsuarioDto) throws  AqueHoraExceptions;
+    int setupdateUser(String contrasena,Long usuarioId) throws  AqueHoraExceptions;
 }

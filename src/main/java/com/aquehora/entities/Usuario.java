@@ -38,9 +38,6 @@ public class Usuario
     @Column(name="contrasena",nullable = false,columnDefinition = "TEXT")
     private String contrasena;
 
-    //@Column(name="fecha_nacimiento",nullable = false,columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-    //private LocalDateTime fecha_nacimiento;
-
     @OneToMany(
             mappedBy = "usuario",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},

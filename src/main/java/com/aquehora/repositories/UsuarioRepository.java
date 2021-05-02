@@ -1,10 +1,14 @@
 package com.aquehora.repositories;
 
+import com.aquehora.DTO.UsuarioDto;
 import com.aquehora.entities.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,5 +20,11 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long>
 
     @Query("SELECT User FROM Usuario User")
     List<Usuario> findUsuarios();
+
+    @Transactional
+    @Modifying
+    @Query("update Usuario user set user.contrasena= ?1 where user.id= ?2")
+    int setUpdateUser(String contrasena,Long userId);
+
 
 }

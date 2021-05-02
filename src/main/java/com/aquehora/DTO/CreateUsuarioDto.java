@@ -12,6 +12,4 @@ public class CreateUsuarioDto
     private String name;
     private String correo;
     private String contrasena;
-    //private LocalDateTime fecha_nacimiento;
-
 }

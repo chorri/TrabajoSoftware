@@ -52,5 +52,15 @@ public class UsuarioController
         return 0;
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/updusercorreo")
+    public int updateUsuarioCorreo(@RequestBody String correo, Long usuarioId){
+        try {
+            return usuarioService.setUpdateUserCorreo(correo, usuarioId);
+        } catch (AqueHoraExceptions aqueHoraExceptions) {
+            aqueHoraExceptions.printStackTrace();
+        }
+        return 0;
+    }
 
 }

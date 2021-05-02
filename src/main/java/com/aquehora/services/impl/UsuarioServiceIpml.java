@@ -20,8 +20,7 @@ public class UsuarioServiceIpml implements UsuarioService
 {
     @Autowired  //Inyeccion de Dependencias, con esto podemos usar los Repository
     private UsuarioRepository usuarioRepository;
-    private static final ModelMapper modelMapper= new ModelMapper() {
-    };
+    private static final ModelMapper modelMapper= new ModelMapper() {};
 
 
     @Override
@@ -34,13 +33,13 @@ public class UsuarioServiceIpml implements UsuarioService
         List<Usuario> usuariosEntity=usuarioRepository.findAll();
         return usuariosEntity.stream().map(usuario->modelMapper.map(usuario,UsuarioDto.class)).collect(Collectors.toList());
     }
+
     @Override
     public UsuarioDto createUsuario(CreateUsuarioDto createUsuarioDto) throws AqueHoraExceptions {
         Usuario usuario=new Usuario();
         usuario.setNombre(createUsuarioDto.getName());
         usuario.setCorreo(createUsuarioDto.getCorreo());
         usuario.setContrasena(createUsuarioDto.getContrasena());
-        //usuario.setFecha_nacimiento(createUsuarioDto.getFecha_nacimiento());
         try{
             usuario=usuarioRepository.save(usuario);
         }catch (Exception ex){
@@ -48,6 +47,11 @@ public class UsuarioServiceIpml implements UsuarioService
         }
 
         return  modelMapper.map(getUsuarioEntity(usuario.getId()),UsuarioDto.class);
+    }
+
+    @Override
+    public int setupdateUser(String contrasena, Long usuarioId) throws AqueHoraExceptions {
+        return usuarioRepository.setUpdateUser(contrasena,usuarioId);
     }
 
     private Usuario getUsuarioEntity(Long usuarioId) throws AqueHoraExceptions

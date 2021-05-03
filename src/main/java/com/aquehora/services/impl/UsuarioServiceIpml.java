@@ -63,8 +63,8 @@ public class UsuarioServiceIpml implements UsuarioService
     @Override
     public UsuarioDto LoginAcess(String usuario, String contrasena) throws AqueHoraExceptions
     {
-        usuarioRepository.findByNombreEqualsAndContrasenaEquals(usuario,contrasena);
-        return modelMapper.map(getUsuarioEntityName(usuario),UsuarioDto.class);
+
+        return modelMapper.map(usuarioRepository.findByNombreEqualsAndContrasenaEquals(usuario,contrasena),UsuarioDto.class);
     }
 
     public Usuario getUsuarioEntity(Long usuarioId) throws AqueHoraExceptions
@@ -76,4 +76,5 @@ public class UsuarioServiceIpml implements UsuarioService
     {
         return usuarioRepository.findByNombre(name).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
     }
+
 }

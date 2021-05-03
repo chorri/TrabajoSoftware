@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping(path = "/AqueHoraUsuario")
 public class UsuarioController
@@ -66,9 +68,10 @@ public class UsuarioController
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/LoginUser")
-    public AqueHoraResponse<UsuarioDto> LoginAcces(String nombre,String contrasena)
+    public AqueHoraResponse<UsuarioDto> LoginAcces(String nombre, String contrasena)
             throws AqueHoraExceptions{
-        return new AqueHoraResponse<>("Succes Login",String.valueOf(HttpStatus.OK),"OK",usuarioService.LoginAcess(nombre,contrasena));
+        return new AqueHoraResponse<>("Succes Login",String.valueOf(HttpStatus.OK),"OK",
+                usuarioService.LoginAcess(nombre,contrasena));
     }
 
 }

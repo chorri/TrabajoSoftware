@@ -90,7 +90,7 @@ public class NotaServiceImpl implements NotaService {
     }
      */
 
-    private Nota getNotaEntity(Long notaId) throws AqueHoraExceptions {
+    public Nota getNotaEntity(Long notaId) throws AqueHoraExceptions {
         return notaRepository.findById(notaId).orElseThrow(() -> new NotFoundException("NotFound-4040", "Nota-NotFound-404"));
     }
 }

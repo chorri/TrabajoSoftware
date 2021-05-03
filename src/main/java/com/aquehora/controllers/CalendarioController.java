@@ -16,7 +16,7 @@ public class CalendarioController {
     private CalendarioService calendarioService;
 
     @ResponseStatus(HttpStatus.OK)
-    @PostMapping("/calendario")
+    @PostMapping("/calendarios")
     public AqueHoraResponse<CalendarioDto> createCalendario(@RequestBody CreateCalendarioDto createCalendarioDto)
             throws AqueHoraExceptions {
         return new AqueHoraResponse<>("Succes to create Nota",String.valueOf(HttpStatus.OK),"Ok",

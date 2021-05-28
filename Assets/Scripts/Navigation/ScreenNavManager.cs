@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScreenNavManager : MonoBehaviour
 {
     public List<Transform> screens;
+    public Transform hamburger;
 
     public int currentScreen = 0;
 
@@ -27,5 +28,10 @@ public class ScreenNavManager : MonoBehaviour
         screens[currentScreen].gameObject.SetActive(false);
         //Change
         currentScreen = newScreen;
+    }
+
+    public void EnableHamburger(bool state)
+    {
+        hamburger.GetComponent<Animator>().SetBool("On",state);
     }
 }

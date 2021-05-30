@@ -5,21 +5,12 @@ using UnityEngine;
 public class ScreenNavManager : MonoBehaviour
 {
     public List<Transform> screens;
-    public Transform hamburger;
 
     public int currentScreen = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    [Header("Animators")]
+    public Animator hamburger;
+    public Animator note;
 
     public void ChangeScreen(int newScreen)
     {
@@ -32,6 +23,16 @@ public class ScreenNavManager : MonoBehaviour
 
     public void EnableHamburger(bool state)
     {
-        hamburger.GetComponent<Animator>().SetBool("On",state);
+        hamburger.SetBool("HamState", state);
+    }
+
+    public void AddNote(bool state)
+    {
+        note.SetBool("AddNote",state);
+    }
+
+    public void Test()
+    {
+        Debug.Log("TEXTO TEST");
     }
 }

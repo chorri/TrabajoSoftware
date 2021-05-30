@@ -11,6 +11,7 @@ public class ScreenNavManager : MonoBehaviour
     [Header("Animators")]
     public Animator hamburger;
     public Animator note;
+    public Animator list;
 
     public void ChangeScreen(int newScreen)
     {
@@ -34,5 +35,14 @@ public class ScreenNavManager : MonoBehaviour
     public void HoldNote(bool state)
     {
         note.SetBool("HoldNote", state);
+    }
+    public void AddList(bool state)
+    {
+        list.SetBool("AddNote",state);
+    }
+
+    public void HoldList(bool state)
+    {
+        list.SetBool("HoldNote", state);
     }
 }

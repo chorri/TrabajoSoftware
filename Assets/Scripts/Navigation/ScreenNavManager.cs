@@ -31,8 +31,8 @@ public class ScreenNavManager : MonoBehaviour
         note.SetBool("AddNote",state);
     }
 
-    public void Test()
+    public void HoldNote(bool state)
     {
-        Debug.Log("TEXTO TEST");
+        note.SetBool("HoldNote", state);
     }
 }

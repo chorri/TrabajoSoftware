@@ -1207,6 +1207,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1800186885}
+        m_TargetAssemblyTypeName: NoteManager, Assembly-CSharp
+        m_MethodName: ChangeBehaviour
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &128146410
 GameObject:
   m_ObjectHideFlags: 0
@@ -8279,6 +8291,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1800186885}
+        m_TargetAssemblyTypeName: NoteManager, Assembly-CSharp
+        m_MethodName: ChangeBehaviour
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1001099903
 GameObject:
   m_ObjectHideFlags: 0
@@ -9512,7 +9536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1191033007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11750,7 +11774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1522417844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15732,7 +15756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -15740,7 +15764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -15780,11 +15804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 180.13449
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -37.5
       objectReference: {fileID: 0}
     - target: {fileID: 5389792880909287320, guid: 8dfba81faf8c757438b4ed350660f2e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

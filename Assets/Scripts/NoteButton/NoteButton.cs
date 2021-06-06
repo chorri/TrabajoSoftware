@@ -31,7 +31,7 @@ public class NoteButton : MonoBehaviour
                 noteButtonAnim.SetBool("Delete", true);
                 prompEdit = false;
                 break;
-            case NoteManager.NotesBehaviour.edit:
+            case NoteManager.NotesBehaviour.busy:
                 noteButtonAnim.SetBool("Delete", false);
                 prompEdit = false;
                 transform.GetComponent<Collider2D>().enabled = false;

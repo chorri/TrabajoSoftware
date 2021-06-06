@@ -8,7 +8,7 @@ public class NoteManager : MonoBehaviour
     {
         normal,
         delete,
-        edit
+        busy
     }
 
     [Header("References")]

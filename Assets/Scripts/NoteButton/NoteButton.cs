@@ -10,6 +10,8 @@ public class NoteButton : MonoBehaviour
     public float timeToHold = 1;
     float holdStart;
     public Vector3 holdingSize;
+    float holdOffset = 50f;
+    Vector3 holdStartPos;
 
     [Header("References")]
     public Text noteTitle;
@@ -49,6 +51,13 @@ public class NoteButton : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Vector3.Distance(Input.mousePosition,holdStartPos) > holdOffset)
+        {
+            holding = false;
+            prompEdit = false;
+            rectTransform.localScale = Vector3.one;
+        }
+
         if (holding && Time.time - holdStart >= timeToHold)
         {
             NoteManager.instance.ChangeBehaviour(1);
@@ -70,6 +79,8 @@ public class NoteButton : MonoBehaviour
         prompEdit = true;
         holdStart = Time.time;
         rectTransform.localScale = holdingSize;
+
+        holdStartPos = Input.mousePosition;
     }
 
     private void OnMouseUp()
@@ -86,8 +97,6 @@ public class NoteButton : MonoBehaviour
 
     private void OnMouseExit()
     {
-        holding = false;
-        prompEdit = false;
-        rectTransform.localScale = Vector3.one;
+        
     }
 }

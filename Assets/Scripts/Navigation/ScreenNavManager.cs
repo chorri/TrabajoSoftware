@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class ScreenNavManager : MonoBehaviour
 {
+    #region Singleton Reference
+    public static ScreenNavManager instance;
+
+    private void Start()
+    {
+        instance = this;
+    }
+    #endregion
+
     public List<Transform> screens;
 
     public int currentScreen = 0;
 
     [Header("Animators")]
     public Animator hamburger;
-    public Animator note;
     public Animator list;
 
     public void ChangeScreen(int newScreen)
@@ -27,15 +35,6 @@ public class ScreenNavManager : MonoBehaviour
         hamburger.SetBool("HamState", state);
     }
 
-    public void AddNote(bool state)
-    {
-        note.SetBool("AddNote",state);
-    }
-
-    public void HoldNote(bool state)
-    {
-        note.SetBool("HoldNote", state);
-    }
     public void AddList(bool state)
     {
         list.SetBool("AddNote",state);

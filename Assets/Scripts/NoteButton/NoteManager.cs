@@ -7,15 +7,19 @@ public class NoteManager : MonoBehaviour
     public enum NotesBehaviour
     {
         normal,
-        delete
+        delete,
+        edit
     }
 
+    [Header("References")]
     public static NoteManager instance;
     public Animator note;
-    public NotesBehaviour currentBehaviour;
-
     public RectTransform noteContainer;
+    public GameObject noteButtonPrefab;
+
+    [Header("Values")]
     public int noteCount;
+    public NotesBehaviour currentBehaviour;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +27,15 @@ public class NoteManager : MonoBehaviour
         instance = this;
     }
 
-
-    public void AddNote(bool state)
+    public void EditNotePromp(bool state)
     {
         note.SetBool("AddNote", state);
+    }
+
+
+    public void AddNote()
+    {
+        Instantiate(noteButtonPrefab,noteContainer.transform);
         noteCount++;
         if (noteCount > 4)
         {

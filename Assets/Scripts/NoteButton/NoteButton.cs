@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NoteButton : MonoBehaviour
 {
     public bool holding = false;
+    public bool prompEdit = false;
     public float timeToHold = 1;
     float holdStart;
     public Vector3 holdingSize;
@@ -18,9 +19,28 @@ public class NoteButton : MonoBehaviour
 
     private void Update()
     {
+        switch (NoteManager.instance.currentBehaviour)
+        {
+            case NoteManager.NotesBehaviour.normal:
+                noteButtonAnim.SetBool("Delete", false);
+                transform.GetComponent<Collider2D>().enabled = true;
+                break;
+            case NoteManager.NotesBehaviour.delete:
+                noteButtonAnim.SetBool("Delete", true);
+                prompEdit = false;
+                break;
+            case NoteManager.NotesBehaviour.edit:
+                noteButtonAnim.SetBool("Delete", false);
+                prompEdit = false;
+                transform.GetComponent<Collider2D>().enabled = false;
+                break;
+            default:
+                break;
+        }
         if (NoteManager.instance.currentBehaviour == NoteManager.NotesBehaviour.delete)
         {
             noteButtonAnim.SetBool("Delete", true);
+            prompEdit = false;
         } else
         {
             noteButtonAnim.SetBool("Delete", false);
@@ -31,9 +51,10 @@ public class NoteButton : MonoBehaviour
     {
         if (holding && Time.time - holdStart >= timeToHold)
         {
-            Debug.Log("Holding");
             NoteManager.instance.ChangeBehaviour(1);
             NoteManager.instance.HoldNote(true);
+            holding = false;
+            prompEdit = false;
         }
     }
 
@@ -46,6 +67,7 @@ public class NoteButton : MonoBehaviour
     private void OnMouseDown()
     {
         holding = true;
+        prompEdit = true;
         holdStart = Time.time;
         rectTransform.localScale = holdingSize;
     }
@@ -54,11 +76,18 @@ public class NoteButton : MonoBehaviour
     {
         holding = false;
         rectTransform.localScale = Vector3.one;
+
+        if (prompEdit)
+        {
+            NoteManager.instance.EditNotePromp(true);
+            NoteManager.instance.ChangeBehaviour(2);//Edit Behaviour
+        }
     }
 
     private void OnMouseExit()
     {
         holding = false;
+        prompEdit = false;
         rectTransform.localScale = Vector3.one;
     }
 }

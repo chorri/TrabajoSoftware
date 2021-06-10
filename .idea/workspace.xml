@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="56da78ec-81af-4469-8f79-1d9b7e85b9d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aquehora/controllers/CalendarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aquehora/controllers/CalendarioController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +39,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="backend" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1rok52UnL9YisgIswygrrieJaUs" />
@@ -65,23 +59,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Booking-Restaurant/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../WhatTimeGrupal" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AquehoraSoftwareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="TrabajoSoftware" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.aquehora.AquehoraSoftwareApplication" />
@@ -100,7 +83,9 @@
       <updated>1619649644257</updated>
       <workItem from="1619649645709" duration="6288000" />
       <workItem from="1619926180082" duration="352000" />
-      <workItem from="1619996409867" duration="8867000" />
+      <workItem from="1620079783206" duration="110000" />
+      <workItem from="1620102057729" duration="611000" />
+      <workItem from="1620103991442" duration="201000" />
     </task>
     <servers />
   </component>

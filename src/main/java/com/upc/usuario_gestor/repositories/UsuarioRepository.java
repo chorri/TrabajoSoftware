@@ -16,11 +16,7 @@ import java.util.Optional;
 public interface UsuarioRepository extends JpaRepository<Usuario,Long>
 {
     Optional<Usuario> findById(Long id);
-    Optional<Usuario> findByNombre(String nombre);
-    Optional<Usuario>  findByNombreEqualsAndContrasenaEquals(String nombre, String contrasena);
-
-    @Query("SELECT User FROM Usuario User")
-    List<Usuario> findUsuarios();
+    Optional<Usuario>  findByNombreAndContrasena(String nombre, String contrasena);
 
     @Transactional
     @Modifying

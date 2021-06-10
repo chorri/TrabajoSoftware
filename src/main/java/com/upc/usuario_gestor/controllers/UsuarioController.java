@@ -3,6 +3,7 @@ package com.upc.usuario_gestor.controllers;
 
 import com.upc.usuario_gestor.DTO.CreateUsuarioDto;
 import com.upc.usuario_gestor.DTO.UsuarioDto;
+import com.upc.usuario_gestor.entities.Usuario;
 import com.upc.usuario_gestor.exceptions.UsuarioGestorExceptions;
 import com.upc.usuario_gestor.responses.UsuarioGestorResponse;
 import com.upc.usuario_gestor.services.UsuarioService;

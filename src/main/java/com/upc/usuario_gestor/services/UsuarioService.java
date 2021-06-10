@@ -2,6 +2,7 @@ package com.upc.usuario_gestor.services;
 
 import com.upc.usuario_gestor.DTO.CreateUsuarioDto;
 import com.upc.usuario_gestor.DTO.UsuarioDto;
+import com.upc.usuario_gestor.entities.Usuario;
 import com.upc.usuario_gestor.exceptions.UsuarioGestorExceptions;
 
 import java.util.List;
@@ -15,5 +16,4 @@ public interface UsuarioService
     int setUpdateUserCorreo(String correo, Long usuarioId) throws UsuarioGestorExceptions;
     UsuarioDto LoginAcess(String usuario,String contrasena) throws  UsuarioGestorExceptions;
     void deleteUser(Long userid) throws UsuarioGestorExceptions;
-
 }

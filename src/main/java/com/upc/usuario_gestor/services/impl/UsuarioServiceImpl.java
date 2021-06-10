@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,7 +42,6 @@ public class UsuarioServiceImpl implements UsuarioService
         usuario.setContrasena(createUsuarioDto.getPassword());
 
         try{
-            //usuario=usuarioRepository.save(usuario);
             usuario= (Usuario) usuarioRepository.save(usuario);
         }catch (Exception ex){
             throw new InternalServerErrorException("INTERNAL_SERVER_ERROR","INTERNAL_SERVER_ERROR");
@@ -64,7 +64,7 @@ public class UsuarioServiceImpl implements UsuarioService
     @Override
     public UsuarioDto LoginAcess(String usuario, String contrasena) throws UsuarioGestorExceptions
     {
-        return modelMapper.map(usuarioRepository.findByNombreEqualsAndContrasenaEquals(usuario,contrasena), UsuarioDto.class);
+        return modelMapper.map(getUsuarioAcces(usuario, contrasena), UsuarioDto.class);
     }
 
     @Override
@@ -77,12 +77,10 @@ public class UsuarioServiceImpl implements UsuarioService
     {
         return usuarioRepository.findById(usuarioId).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
     }
-    public Usuario getUsuarioEntityName(String name) throws UsuarioGestorExceptions
+
+    public Usuario getUsuarioAcces(String name,String pass) throws UsuarioGestorExceptions
     {
-        return usuarioRepository.findByNombre(name).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
+        return usuarioRepository.findByNombreAndContrasena(name,pass).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
     }
-    public Usuario getUsuarioID(String name) throws UsuarioGestorExceptions
-    {
-        return usuarioRepository.findByNombre(name).orElseThrow(()->new NotFoundException("NOTFOUND-4040","USUARIO-NOTFOUND-404"));
-    }
+
 }

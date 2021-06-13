@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Builder
 public class NotaDto {
     private Long id;
     private String name_nota;

@@ -10,6 +10,7 @@ import com.gestordenotas.demo.exceptions.NotFoundException;
 import com.gestordenotas.demo.repositories.NotaRepository;
 import com.gestordenotas.demo.services.NotaService;
 import org.modelmapper.ModelMapper;
+import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class NotaServiceImpl implements NotaService {
     private static final ModelMapper modelMapper = new ModelMapper();
 
     @Override
-    public NotaDto createNota(CreateNotaDto createNotaDto) throws AqueHoraExceptions{
+    public NotaDto createNota(CreateNotaDto createNotaDto,long usuarioId) throws AqueHoraExceptions{
         Nota nota = new Nota();
         nota.setName_nota(createNotaDto.getName_nota());
         nota.setImportancia(createNotaDto.getImportancia());
@@ -35,17 +36,17 @@ public class NotaServiceImpl implements NotaService {
         //Por ahora usuario Fijo para testear
         Usuario currentUsuario = new Usuario();
         try{
-            currentUsuario = usuarioServiceIpml.getUsuarioEntity((long)9);
+            currentUsuario = usuarioServiceIpml.getUsuarioEntity(usuarioId);
+            nota.setUsuario(currentUsuario);
+
+            try{
+                nota=notaRepository.save(nota);
+            } catch (Exception ex) {
+                throw new InternalServerErrorException("INTERNAL_SERVER_ERROR","INTERNAL_SERVER_ERROR");
+            }
         } catch (Exception ex){
             //Checkear si es error correcto
-            throw new InternalServerErrorException("INTERNAL_SERVER_ERROR Usuario","INTERNAL_SERVER_ERROR Usuario");
-        }
-        nota.setUsuario(currentUsuario);
-
-        try{
-            nota=notaRepository.save(nota);
-        } catch (Exception ex) {
-            throw new InternalServerErrorException("INTERNAL_SERVER_ERROR","INTERNAL_SERVER_ERROR");
+            throw new NotFoundException("Usuario Error","Usuario Error");
         }
 
         return modelMapper.map(getNotaEntity(nota.getId()),NotaDto.class);
@@ -92,5 +93,18 @@ public class NotaServiceImpl implements NotaService {
 
     public Nota getNotaEntity(Long notaId) throws AqueHoraExceptions {
         return notaRepository.findById(notaId).orElseThrow(() -> new NotFoundException("NotFound-4040", "Nota-NotFound-404"));
+    }
+
+    @Override
+    public void deleteNota(Long notaId) throws AqueHoraExceptions {
+        try {
+
+            if(notaRepository.existsById(notaId)){
+                notaRepository.deleteById(notaId);
+            }
+        } catch (Exception e){
+            throw new NotFoundException("Nota Not Found Error","Nota Not Found Error");
+        }
+
     }
 }

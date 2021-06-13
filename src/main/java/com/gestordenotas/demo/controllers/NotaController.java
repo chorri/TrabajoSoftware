@@ -17,18 +17,29 @@ public class NotaController {
 
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/notas")
-    public AqueHoraResponse<NotaDto> createNota(@RequestBody CreateNotaDto createNotaDto) throws AqueHoraExceptions {
+    public AqueHoraResponse<NotaDto> createNota(@RequestBody CreateNotaDto createNotaDto,long usuarioId)
+            throws AqueHoraExceptions {
         return new AqueHoraResponse<>("Succes to create Nota",String.valueOf(HttpStatus.OK),"Ok",
-                                        notaService.createNota(createNotaDto));
+                notaService.createNota(createNotaDto,usuarioId));
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping
+    @PutMapping("/updatenota")
     public AqueHoraResponse<NotaDto> updateNota(@RequestBody NotaDto notaDto) throws AqueHoraExceptions {
         return new AqueHoraResponse<>("Succes to update Nota",String.valueOf(HttpStatus.OK),"Ok",
                                        notaService.updateNota(notaDto));
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/deletenota")
+    public void deleteNota(Long notaId)
+    {
+        try {
+            notaService.deleteNota(notaId);
+        } catch (AqueHoraExceptions NotaGestorExceptions) {
+            NotaGestorExceptions.printStackTrace();
+        }
+    }
     /*
         @ResponseStatus(HttpStatus.OK)
     @PostMapping("/usuarios")

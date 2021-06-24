@@ -1,5 +1,6 @@
 package com.upc.usuario_gestor.DTO;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

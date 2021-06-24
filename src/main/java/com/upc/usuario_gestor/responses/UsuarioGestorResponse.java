@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 @Getter
 @Setter
@@ -21,4 +23,6 @@ public class UsuarioGestorResponse <T>
         this.code=code;
         this.message=message;
     }
+    public ResponseEntity<UsuarioGestorResponse<T>> createResponse(){return new ResponseEntity<>(this, HttpStatus.OK);}
+
 }

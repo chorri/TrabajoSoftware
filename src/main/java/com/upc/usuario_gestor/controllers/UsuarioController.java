@@ -2,6 +2,7 @@ package com.upc.usuario_gestor.controllers;
 
 
 import com.upc.usuario_gestor.DTO.CreateUsuarioDto;
+import com.upc.usuario_gestor.DTO.NotaDTO;
 import com.upc.usuario_gestor.DTO.UsuarioDto;
 import com.upc.usuario_gestor.entities.Usuario;
 import com.upc.usuario_gestor.exceptions.UsuarioGestorExceptions;
@@ -24,8 +25,9 @@ public class UsuarioController
     @GetMapping("/usuarios/{usuarioId}")
     public UsuarioGestorResponse<UsuarioDto> getUsuarioById(@PathVariable Long usuarioId)
             throws UsuarioGestorExceptions {
-        return new UsuarioGestorResponse<>("Succes",String.valueOf(HttpStatus.OK),"OK",
+       return new UsuarioGestorResponse<>("Succes",String.valueOf(HttpStatus.OK),"OK",
                 usuarioService.getUsuarioById(usuarioId));
+        //return usuarioService.getUsuarioById(usuarioId);
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -72,6 +74,14 @@ public class UsuarioController
             throws UsuarioGestorExceptions{
         return new UsuarioGestorResponse<>("Succes Login",String.valueOf(HttpStatus.OK),"OK",
                 usuarioService.LoginAcess(nombre,contrasena));
+    }
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/NotasUser")
+    public UsuarioGestorResponse<List<NotaDTO>> getNotas(String userId)
+            throws UsuarioGestorExceptions{
+        return new UsuarioGestorResponse<>("Succes Login",String.valueOf(HttpStatus.OK),"OK",
+                usuarioService.getNotasByUser(userId));
+
     }
 
     @ResponseStatus(HttpStatus.OK)

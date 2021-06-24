@@ -1,7 +1,9 @@
 package com.upc.usuario_gestor.services.impl;
 
 import com.upc.usuario_gestor.DTO.CreateUsuarioDto;
+import com.upc.usuario_gestor.DTO.NotaDTO;
 import com.upc.usuario_gestor.DTO.UsuarioDto;
+import com.upc.usuario_gestor.client.NotaServiceClient;
 import com.upc.usuario_gestor.entities.Usuario;
 import com.upc.usuario_gestor.exceptions.InternalServerErrorException;
 import com.upc.usuario_gestor.exceptions.NotFoundException;
@@ -23,6 +25,8 @@ public class UsuarioServiceImpl implements UsuarioService
     private UsuarioRepository usuarioRepository;
     private static final ModelMapper modelMapper=new ModelMapper();
 
+    @Autowired
+    private NotaServiceClient notaServiceClient;
 
     @Override
     public UsuarioDto getUsuarioById(Long usuarioId) throws UsuarioGestorExceptions {
@@ -72,6 +76,12 @@ public class UsuarioServiceImpl implements UsuarioService
     {
         usuarioRepository.deleteUser(userid);
     }
+
+    @Override
+    public List<NotaDTO> getNotasByUser(String id) throws UsuarioGestorExceptions {
+        return notaServiceClient.getNotasxUser(id);
+    }
+
 
     public Usuario getUsuarioEntity(Long usuarioId) throws UsuarioGestorExceptions
     {

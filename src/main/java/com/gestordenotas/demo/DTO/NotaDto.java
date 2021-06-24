@@ -14,4 +14,5 @@ public class NotaDto {
     private Integer importancia;
     private String contenido;
     private LocalDateTime fecha_creacion;
+    private String usuarioid;
 }

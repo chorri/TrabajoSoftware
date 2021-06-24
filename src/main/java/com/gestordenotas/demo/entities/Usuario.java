@@ -38,10 +38,10 @@ public class Usuario
     @Column(name="contrasena",nullable = false,columnDefinition = "TEXT")
     private String contrasena;
 
-    @OneToMany(
+    /*@OneToMany(
             mappedBy = "usuario",
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             fetch = FetchType.LAZY
     )
-    private List<Nota> notes=new ArrayList<>();
+    private List<Nota> notes=new ArrayList<>();*/
 }

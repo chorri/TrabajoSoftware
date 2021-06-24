@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Nota
 {
     @Id
@@ -45,7 +46,10 @@ public class Nota
             columnDefinition = "TIMESTAMP WITHOUT TIME ZONE"
     )
     private LocalDateTime fecha_creacion;
-    @ManyToOne
+    @Column(name = "usuario_ID")
+    private String usuarioid;
+
+    /*@ManyToOne
     @JoinColumn(
             name="usuario_id",
             nullable = false,
@@ -54,5 +58,5 @@ public class Nota
                     name="usuario_note_fk"
             )
     )
-    private Usuario usuario;
+    private Usuario usuario;*/
 }

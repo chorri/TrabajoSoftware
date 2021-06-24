@@ -1,8 +1,11 @@
 package com.gestordenotas.demo.converters;
 
+import com.gestordenotas.demo.DTO.CreateNotaDto;
 import com.gestordenotas.demo.entities.Nota;
 import com.gestordenotas.demo.DTO.NotaDto;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public class NotaConverter extends AbstractConverter<Nota, NotaDto> {
 
     @Override
@@ -27,18 +30,15 @@ public class NotaConverter extends AbstractConverter<Nota, NotaDto> {
                 .contenido(entity.getContenido())
                 .fecha_creacion(entity.getFecha_creacion())
                 .build();
-    }
+    }*/
 
-    @Override
-    public Nota fromDTO(NotaDto dto) {
-        if (dto == null) return null;
+    public Nota create(CreateNotaDto dto) {
         return Nota.builder()
-                .id(dto.getId())
                 .name_nota(dto.getName_nota())
                 .importancia(dto.getImportancia())
-                .contenido(dto.getContenido())
+                .contenido((dto.getContenido()))
                 .fecha_creacion(dto.getFecha_creacion())
                 .build();
     }
-     */
+
 }

@@ -3,7 +3,6 @@ package com.gestordenotas.demo.services;
 import com.gestordenotas.demo.DTO.NotaDto;
 import com.gestordenotas.demo.DTO.CreateNotaDto;
 import com.gestordenotas.demo.DTO.NotaRequest;
-import com.gestordenotas.demo.DTO.UsuarioDto;
 import com.gestordenotas.demo.exceptions.AqueHoraExceptions;
 
 import java.util.Date;

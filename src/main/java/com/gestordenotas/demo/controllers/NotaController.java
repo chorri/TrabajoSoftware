@@ -32,7 +32,7 @@ public class NotaController {
     @PostMapping("/notas")
     public AqueHoraResponse<NotaDto> createNota(NotaRequest notaRequest, @RequestBody CreateNotaDto createNotaDto)
            throws AqueHoraExceptions {
-        return new AqueHoraResponse<>("Succes to create Nota",String.valueOf(HttpStatus.OK),"Ok",
+        return new AqueHoraResponse<>("Success to create Nota",String.valueOf(HttpStatus.OK),"Ok",
                 notaService.createNota(createNotaDto,notaRequest));
     }
 
@@ -56,7 +56,9 @@ public class NotaController {
     @PutMapping("/nota/updatedescription")
     public int updateNotaDescription(@RequestBody String contenido, Long noteId) {
         try {
-            return notaService.setUpdateDescriptionNota(contenido, noteId);
+            if(notaRepository.existsById(noteId)) {
+                return notaService.setUpdateDescriptionNota(contenido, noteId);
+            }
         } catch (AqueHoraExceptions whatTimeExceptions) {
             whatTimeExceptions.printStackTrace();
         }
@@ -78,7 +80,9 @@ public class NotaController {
     public void deleteNote(Long noteId)
     {
         try {
-            notaService.DeleteNote(noteId);
+            if(notaRepository.existsById(noteId)) {
+                notaService.DeleteNote(noteId);
+            }
         } catch (AqueHoraExceptions whatTimeExceptions) {
             whatTimeExceptions.printStackTrace();
         }

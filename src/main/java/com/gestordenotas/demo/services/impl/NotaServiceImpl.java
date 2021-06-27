@@ -6,7 +6,6 @@ import com.gestordenotas.demo.DTO.NotaRequest;
 import com.gestordenotas.demo.DTO.UsuarioDto;
 import com.gestordenotas.demo.clientUser.UsuarioServiceClient;
 import com.gestordenotas.demo.entities.Nota;
-import com.gestordenotas.demo.entities.Usuario;
 import com.gestordenotas.demo.exceptions.AqueHoraExceptions;
 import com.gestordenotas.demo.exceptions.InternalServerErrorException;
 import com.gestordenotas.demo.exceptions.NotFoundException;
@@ -25,10 +24,6 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class NotaServiceImpl implements NotaService {
-
-    @Autowired
-    private UsuarioServiceIpml usuarioServiceIpml;
-
 
     @Autowired
     private NotaRepository notaRepository;
@@ -112,56 +107,8 @@ public class NotaServiceImpl implements NotaService {
         return noteEntity.stream().map(nota->modelMapper.map(nota, NotaDto.class)).collect(Collectors.toList());
     }
 
-
-
-    /*
-    @Transactional
-    public Product save(Product product) {
-        try {
-            ProductValidator.save(product);
-
-            if(product.getId() == null) {
-                Product newProduct = productRepository.save(product);
-                return newProduct;
-            }
-
-            Product exitProduct = productRepository.findById(product.getId())
-                    .orElseThrow(() -> new NoDataFoundException("No existe el producto"));
-
-            exitProduct.setName(product.getName());
-            exitProduct.setPrice(product.getPrice());
-            exitProduct.setCategory(product.getCategory());
-            exitProduct.setDescription(product.getDescription());
-            exitProduct.setStock(product.getStock());
-
-            productRepository.save(exitProduct);
-
-            return exitProduct;
-        } catch (ValidateServiceException | NoDataFoundException e) {
-            log.info(e.getMessage(), e);
-            throw e;
-        } catch (Exception e) {
-            log.error(e.getMessage(), e);
-            throw new GeneralServiceException(e.getMessage(), e);
-        }
-
-    }
-     */
-
     public Nota getNotaEntity(Long notaId) throws AqueHoraExceptions {
         return notaRepository.findById(notaId).orElseThrow(() -> new NotFoundException("NotFound-4040", "Nota-NotFound-404"));
     }
-
-    /*@Override
-    public void deleteNota(Long notaId) throws AqueHoraExceptions {
-        try {
-
-            if(notaRepository.existsById(notaId)){
-                notaRepository.deleteById(notaId);
-            }
-        } catch (Exception e){
-            throw new NotFoundException("Nota Not Found Error","Nota Not Found Error");
-        }
-    }*/
 
 }

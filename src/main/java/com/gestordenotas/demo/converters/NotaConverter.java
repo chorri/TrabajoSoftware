@@ -18,20 +18,6 @@ public class NotaConverter extends AbstractConverter<Nota, NotaDto> {
         return null;
     }
 
-    /*
-    @Override
-    public NotaDto fromEntity (Nota entity){
-        if (entity == null) return null;
-
-        return NotaDto.builder()
-                .id(entity.getId())
-                .name_nota(entity.getName_nota())
-                .importancia(entity.getImportancia())
-                .contenido(entity.getContenido())
-                .fecha_creacion(entity.getFecha_creacion())
-                .build();
-    }*/
-
     public Nota create(CreateNotaDto dto) {
         return Nota.builder()
                 .name_nota(dto.getName_nota())

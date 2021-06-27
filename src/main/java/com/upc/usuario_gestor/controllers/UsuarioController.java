@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/WhatTimeUsuario")
+@RequestMapping(path = "/Aquehora")
 public class UsuarioController
 {
     @Autowired

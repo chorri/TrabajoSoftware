@@ -48,15 +48,4 @@ public class Nota
     private LocalDateTime fecha_creacion;
     @Column(name = "usuario_ID")
     private String usuarioid;
-
-    /*@ManyToOne
-    @JoinColumn(
-            name="usuario_id",
-            nullable = false,
-            referencedColumnName = "id",
-            foreignKey = @ForeignKey(
-                    name="usuario_note_fk"
-            )
-    )
-    private Usuario usuario;*/
 }

@@ -13,6 +13,9 @@ import java.util.List;
 @Repository
 public interface NotaRepository extends JpaRepository<Nota,Long>
 {
+    @Override
+    boolean existsById(Long idNota);
+
     @Query("SELECT Note FROM Nota Note where Note.usuarioid=?1")
     List<Nota> findNotas(String usuarioID);
 

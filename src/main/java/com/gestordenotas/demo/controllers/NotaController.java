@@ -130,6 +130,13 @@ public class NotaController {
         return notaService.getAllNotes();
     }
 
-
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation("Devuelve la información de una Nota, atraves de su identificador.")
+    @GetMapping("/notas/{notaId}")
+    public AqueHoraResponse<NotaDto> getNotaById(@PathVariable Long notaId)
+            throws AqueHoraExceptions {
+        return new AqueHoraResponse<>("Succes",String.valueOf(HttpStatus.OK),"OK",
+                notaService.getNotaByID(notaId));
+    }
 
 }

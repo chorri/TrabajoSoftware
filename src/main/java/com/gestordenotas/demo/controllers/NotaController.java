@@ -95,8 +95,8 @@ public class NotaController {
     public int updateUsuarioInvitadoNota(Long noteId,String usuarioInvitadoId)
     {
         try {
-            Nota nota=notaRepository.findNota(noteId);
-            if(notaRepository.existsNotaByIdAndUsuarioIdInvitadoIsNull(noteId) && nota.getUsuarioid().equals(usuarioInvitadoId) ) {
+            NotaDto notaDto= notaService.getNotaByID(noteId);
+            if(notaRepository.existsNotaByIdAndUsuarioIdInvitadoIsNull(noteId) && !notaDto.getUsuarioid().equals(usuarioInvitadoId)) {
                 return notaService.setUpdateUsuarioAmigoById(usuarioInvitadoId,noteId);
             }
         } catch (AqueHoraExceptions whatTimeExceptions) {

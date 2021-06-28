@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface NotaService {
 
-
+    NotaDto getNotaByID(Long notaID)throws AqueHoraExceptions;
     NotaDto createNota(CreateNotaDto createNotaDto,NotaRequest notaRequest)throws AqueHoraExceptions;
     int setUpdateNameNota(String name_nota,Long note_id) throws  AqueHoraExceptions;
     int setUpdateDescriptionNota(String contenido,Long note_id) throws  AqueHoraExceptions;

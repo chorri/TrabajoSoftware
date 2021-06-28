@@ -21,6 +21,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.rmi.server.LogStream.log;
+
 @Slf4j
 @Service
 public class NotaServiceImpl implements NotaService {
@@ -33,10 +35,15 @@ public class NotaServiceImpl implements NotaService {
     private UsuarioServiceClient usuarioServiceClient;
 
     @Override
+    public NotaDto getNotaByID(Long notaID) throws AqueHoraExceptions {
+        return modelMapper.map(getNotaEntity(notaID),NotaDto.class);
+    }
+
+    @Override
     public NotaDto createNota(CreateNotaDto createNotaDto,NotaRequest notaRequest) throws AqueHoraExceptions
     {
         UsuarioDto usuario=usuarioServiceClient.findUserxID(notaRequest.getUserId());
-        log.info(usuario.toString());
+        NotaServiceImpl.log.info(usuario.toString());
         Nota nota = new Nota();
         nota.setName_nota(createNotaDto.getName_nota());
         nota.setImportancia(createNotaDto.getImportancia());
@@ -69,9 +76,9 @@ public class NotaServiceImpl implements NotaService {
     }
 
     @Override
-    public int setUpdateUsuarioAmigoById(String name_nota, Long note_id) throws AqueHoraExceptions {
-
-        return notaRepository.setUpdateUsuarioAmigo(name_nota,note_id);
+    public int setUpdateUsuarioAmigoById(String amigoID, Long note_id) throws AqueHoraExceptions
+    {
+        return notaRepository.setUpdateUsuarioAmigo(amigoID,note_id);
     }
 
     @Override

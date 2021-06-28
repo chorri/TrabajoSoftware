@@ -31,7 +31,7 @@ public interface NotaRepository extends JpaRepository<Nota,Long>
     @Query("SELECT Note FROM Nota Note where Note.name_nota like %?1%  and Note.usuario.id=?2")
     List<Nota> findNotaContainName(String name_nota,Long usuarioID);
 */
-    boolean existsNotaByIdAndUsuarioIdInvitadoNotNull(Long idNota);
+
     boolean existsNotaByIdAndUsuarioIdInvitadoIsNull(Long idNota);
 
     @Query("SELECT Note FROM Nota Note where Note.id=?1")

@@ -90,6 +90,23 @@ public class NotaController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @ApiOperation("Añadimos un usuario amigo a la nota, nos pide el id de la nota y el id del amigo")
+    @PutMapping("/nota/updateAmigo")
+    public int updateUsuarioInvitadoNota(Long noteId,String usuarioInvitadoId)
+    {
+        try {
+            Nota nota=notaRepository.findNota(noteId);
+            if(notaRepository.existsNotaByIdAndUsuarioIdInvitadoIsNull(noteId) && nota.getUsuarioid().equals(usuarioInvitadoId) ) {
+                return notaService.setUpdateUsuarioAmigoById(usuarioInvitadoId,noteId);
+            }
+        } catch (AqueHoraExceptions whatTimeExceptions) {
+            whatTimeExceptions.printStackTrace();
+        }
+        return 0;
+    }
+
+
+    @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Devuelve una lista de notas pertenecientes a un usuario filtradas por su importancia, se pide ingresar la importancia y el Id de usuario")
     @GetMapping("/nota/gnoteByImport")
     public AqueHoraResponse<List<NotaDto>> getNotaByImportancia(Integer importancia,NotaRequest usuarioID)throws
@@ -112,4 +129,7 @@ public class NotaController {
     public List<NotaDto> getNotes(){
         return notaService.getAllNotes();
     }
+
+
+
 }

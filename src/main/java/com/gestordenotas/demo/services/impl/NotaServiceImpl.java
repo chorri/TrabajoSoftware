@@ -42,6 +42,7 @@ public class NotaServiceImpl implements NotaService {
         nota.setImportancia(createNotaDto.getImportancia());
         nota.setContenido(createNotaDto.getContenido());
         nota.setFecha_creacion(createNotaDto.getFecha_creacion());
+        nota.setUsuarioIdInvitado(null);
 
         //Por ahora usuario Fijo para testear
 
@@ -65,6 +66,12 @@ public class NotaServiceImpl implements NotaService {
     @Override
     public int setUpdateNameNota(String name_nota, Long note_id) throws AqueHoraExceptions {
         return notaRepository.setUpdateNoteName(name_nota,note_id);
+    }
+
+    @Override
+    public int setUpdateUsuarioAmigoById(String name_nota, Long note_id) throws AqueHoraExceptions {
+
+        return notaRepository.setUpdateUsuarioAmigo(name_nota,note_id);
     }
 
     @Override

@@ -22,4 +22,7 @@ public interface NotaService {
 
     List<NotaDto> getNotasByFechaCreacion(Date fecha_Creacion) throws  AqueHoraExceptions;
 
+    int setUpdateUsuarioAmigoById(String OtroUsuario,Long noteid) throws  AqueHoraExceptions;
+//    NotaDto findNota(Long note_id)throws AqueHoraExceptions;
+
 }

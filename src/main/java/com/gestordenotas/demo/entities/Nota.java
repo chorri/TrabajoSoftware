@@ -48,4 +48,10 @@ public class Nota
     private LocalDateTime fecha_creacion;
     @Column(name = "usuario_ID")
     private String usuarioid;
+    @Column(
+            name = "usario_invitado",
+            nullable = true,
+            columnDefinition = "TEXT"
+    )
+    private String usuarioIdInvitado;
 }

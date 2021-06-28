@@ -24,4 +24,7 @@ public class NotaDto {
     private LocalDateTime fecha_creacion;
     @ApiModelProperty(notes="Id del usuario dueño de la nota",example ="1",required = true,position = 5)
     private String usuarioid;
+    @ApiModelProperty(notes="Id del usuario invitado a la nota",example ="1",required = false,position = 6)
+    private String usuarioIdInvitado;
+
 }

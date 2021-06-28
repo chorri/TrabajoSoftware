@@ -40,6 +40,11 @@ public class UsuarioServiceImpl implements UsuarioService
     }
     @Override
     public UsuarioDto createUsuario(CreateUsuarioDto createUsuarioDto) throws UsuarioGestorExceptions {
+        Usuario existcorreo=usuarioRepository.findByCorreo(createUsuarioDto.getCorreo()).orElse(null);
+        if(existcorreo!=null)
+        {
+            throw new InternalServerErrorException("CORREO YA EXISTENTE","CORREO YA EXISTENTE");
+        }else{
         Usuario usuario=new Usuario();
         usuario.setNombre(createUsuarioDto.getName());
         usuario.setCorreo(createUsuarioDto.getCorreo());
@@ -51,7 +56,8 @@ public class UsuarioServiceImpl implements UsuarioService
             throw new InternalServerErrorException("INTERNAL_SERVER_ERROR","INTERNAL_SERVER_ERROR");
         }
 
-        return  modelMapper.map(getUsuarioEntity(usuario.getId()),UsuarioDto.class);
+        return  modelMapper.map(getUsuarioEntity(usuario.getId()),UsuarioDto.class);}
+
     }
 
     @Override
